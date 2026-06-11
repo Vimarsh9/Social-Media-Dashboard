@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --sidebar-width: 260px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    @apply bg-slate-950 text-slate-100 font-sans antialiased;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-slate-900; }
+  ::-webkit-scrollbar-thumb { @apply bg-slate-700 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-slate-600; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-500 hover:bg-primary-600 text-white font-medium px-4 py-2 rounded-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply hover:bg-slate-800 text-slate-400 hover:text-slate-100 font-medium px-4 py-2 rounded-xl transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-slate-900 border border-slate-800 rounded-2xl;
+  }
+
+  .input-field {
+    @apply bg-slate-800 border border-slate-700 text-slate-100 placeholder-slate-500 rounded-xl px-4 py-2.5 w-full focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all;
+  }
+
+  .sidebar-link {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:text-slate-100 hover:bg-slate-800 transition-all duration-200 cursor-pointer;
+  }
+
+  .sidebar-link.active {
+    @apply bg-slate-800 text-slate-100;
+  }
+}
